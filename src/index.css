@@ -1,0 +1,17 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { min-height: 100%; }
+body { margin: 0; background: #eef2f9; font-family: Inter, system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+input, select, textarea, button { font: inherit; }
+.nw-input { @apply h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200; }
+.nw-label { @apply mb-1 block text-[11px] font-bold uppercase tracking-wide text-slate-600; }
+.nw-btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-4 text-sm font-bold transition active:scale-[.98]; }
+
+@media print {
+  body * { visibility: hidden; }
+  #receipt-capture, #receipt-capture * { visibility: visible; }
+  #receipt-capture { position: absolute; left: 0; top: 0; box-shadow: none !important; }
+  @page { margin: 8mm; }
+}
